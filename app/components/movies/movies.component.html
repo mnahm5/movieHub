@@ -1,32 +1,36 @@
-<div class="row">
-  <div class="col-md-2">
-    <h1>Heading</h1>
-    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic wo</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a> </p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Popular Movies</h3>
   </div>
-  <div class="col-md-2">
-    <h1>Heading</h1>
-    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic wo</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a> </p>
-  </div>
-  <div class="col-md-2">
-    <h1>Heading</h1>
-    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic wo</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a> </p>
-  </div>
-  <div class="col-md-2">
-    <h1>Heading</h1>
-    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic wo</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a> </p>
-  </div>
-  <div class="col-md-2">
-    <h1>Heading</h1>
-    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic wo</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a> </p>
-  </div>
-  <div class="col-md-2">
-    <h1>Heading</h1>
-    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic wo</p>
-    <p><a class="btn btn-default" href="#" role="button">View Details</a> </p>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let movie of popularList; let i=index" class="col-md-2">
+        <div *ngIf="i < 6">
+          <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.release_date}}</p>
+          <p><a class="btn btn-default" href="#">View Details</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">In Theatres</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let movie of theatersList; let i=index" class="col-md-2">
+        <div *ngIf="i < 6">
+          <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.release_date}}</p>
+          <p><a class="btn btn-default" href="#">View Details</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
