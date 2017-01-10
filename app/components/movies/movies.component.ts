@@ -9,6 +9,8 @@ import { MovieService } from '../../services/movie.service';
 export class MoviesComponent  {
   popularList: Array<Object>;
   theatersList: Array<Object>;
+  searchStr: string;
+  searchRes: Array<Object>;
 
   constructor(private __movieService: MovieService) {
     this.__movieService.getPopular().subscribe(res => {
@@ -17,6 +19,12 @@ export class MoviesComponent  {
 
     this.__movieService.getInTheaters().subscribe(res => {
       this.theatersList = res.results;
+    })
+  }
+
+  searchMovies() {
+    this.__movieService.searchMovies(this.searchStr).subscribe(res => {
+      this.searchRes = res.results;
     })
   }
 }
