@@ -4,6 +4,9 @@
 
 img {
   width: 100%;
+}
+
+.equal {
   max-height: 200px;
 }
 
